@@ -1,0 +1,10 @@
+.navbar-nav a,
+.navbar-brand {
+    color: rgb(255, 255, 255) !important;
+}
+
+
+
+.navbar {
+    background-color: #011a27;
+}

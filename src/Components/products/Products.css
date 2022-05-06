@@ -1,0 +1,13 @@
+.main_heading {
+    font-size: 1.1rem;
+}
+
+.sub_heading {
+    color: gray;
+    font-size: 0.9rem;
+}
+
+.itemsFont {
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+}

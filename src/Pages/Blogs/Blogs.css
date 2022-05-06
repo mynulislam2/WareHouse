@@ -1,0 +1,15 @@
+.blog_banner img {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: 300px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.borderBlog {
+    border: 1px solid rgb(92, 90, 87);
+}

@@ -1,0 +1,20 @@
+.fotter {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(https://i.ibb.co/7tXRd5g/slide-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 85vh;
+}
+
+.fotter_heading {
+    color: white;
+}
+
+.fotterDescription {
+    color: rgb(164, 165, 166);
+}
+
+.background {
+    background-color: rgba(255, 255, 255, .08);
+    margin-right: 5px;
+    padding: 25px;
+}

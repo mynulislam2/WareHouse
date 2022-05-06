@@ -1,0 +1,74 @@
+[
+    {
+        "tittle": "2011 Linux Rx",
+        "img": "https://i.ibb.co/SRyTjZF/3eca27c26a-1024-430x321-jpg.webp",
+        "price": 30000,
+        "description": "LOW MILES,1 OWNER,FINANCING AVAILABLE,CARFAX CERTIFIED,3.5L V6 ENGINE WITH 275 HP,ALL WHEEL DRIVE,POWER GLASS SUNROOF",
+        "Quantity": 20,
+        "Supplier": "mynu",
+        "sold": 10
+    },
+    {
+        "tittle": "2013 Volkswagen Eos",
+        "img": "https://i.ibb.co/WBNKmcZ/51b31d9e35-1024-430x321-jpg.webp",
+        "price": 50000,
+        "description": "CARFAX CERTIFIED, LOW APR FINANCING AVAILABLE,LOW MILES,2.0L TURBO I4 ENGINE WITH 200 HP,AUTOMATIC TRANMISSION",
+        "Quantity": 10,
+        "Supplier": "ridoy",
+        "sold": 5
+    },
+    {
+        "tittle": "2013 Toyota Tacoma",
+        "img": "https://i.ibb.co/zFLR377/359e94dff8-1024-430x321-jpg.webp",
+        "price": 20000,
+        "description": "CARFAX CERTIFIED,FINANCING AVAILABLE,4.0L V6 ENGINE WITH 236 HP,AUTOMATIC TRANSMISSION,4 WHEEL DRIVE,",
+        "Quantity": 15,
+        "Supplier": "farabi",
+        "sold": 2
+    },
+    {
+        "tittle": "2012 Mercedes-Benz M-class",
+        "img": "https://i.ibb.co/jwwntsC/e470adaf32-1024-430x321-jpg.webp",
+        "price": 35000,
+        "description": "CARFAX CERTIFIED,3.5L V6 WITH 302 HP, ALL WHEEL DRIVE, PANORAMIC SUNROOF, REAR VIEW CAMERA, RUNNING BOARDS",
+        "Quantity": 30,
+        "Supplier": "nurul",
+        "sold": 3
+    },
+    {
+        "tittle": "Toyota Fielder WXB Black",
+        "img": "https://i.ibb.co/7rHy6zS/001-2.jpg",
+        "price": 40000,
+        "description": "PETROL WXB, PUSH STARTS , HALF LEATHER SEATS , PROJECTION HID HEAD LIGHT ,  4D, AT, AUTO AC, PS, PW, ABS, AIR BAG",
+        "Quantity": 14,
+        "Supplier": "habib",
+        "sold": 13
+    },
+    {
+        "tittle": "AXIO X 2016 Petrol – 4006",
+        "img": "https://i.ibb.co/f2YxCMK/002-2.jpg",
+        "price": 25000,
+        "description": "TOYOTA AXIO X  SEFETY SENSOR , PROJECTION HEAD LAMP, 5D, AT, PS, PW, AIR BAG, ABS, FOG, NAVI, BACK MONITOR, BLACK COLOUR",
+        "Quantity": 12,
+        "Supplier": "arnab",
+        "sold": 10
+    },
+    {
+        "tittle": "Toyota Fielder WXB Black",
+        "img": "https://i.ibb.co/7rHy6zS/001-2.jpg",
+        "price": 40000,
+        "description": "PETROL WXB, PUSH STARTS , HALF LEATHER SEATS , PROJECTION HID HEAD LIGHT ,  4D, AT, AUTO AC, PS, PW, ABS, AIR BAG",
+        "Quantity": 14,
+        "Supplier": "habib",
+        "sold": 13
+    },
+    {
+        "tittle": "AXIO X 2016 Petrol – 4006",
+        "img": "https://i.ibb.co/f2YxCMK/002-2.jpg",
+        "price": 25000,
+        "description": "TOYOTA AXIO X  SEFETY SENSOR , PROJECTION HEAD LAMP, 5D, AT, PS, PW, AIR BAG, ABS, FOG, NAVI, BACK MONITOR, BLACK COLOUR",
+        "Quantity": 12,
+        "Supplier": "arnab",
+        "sold": 10
+    }
+]
