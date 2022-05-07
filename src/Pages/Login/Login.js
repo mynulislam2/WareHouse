@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { Card, Container, Form, Row, Spinner } from 'react-bootstrap';
 import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -5,7 +6,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import './Login.css';
-import axios from 'axios'
 const Login = () => {
     let navigate = useNavigate();
     let location = useLocation();  
@@ -26,7 +26,7 @@ if (SignInUser) {
     .then(result=>{
     const data=result.data
     console.log(data);
-    localStorage.setItem("accessToken",data.accessToken)
+    localStorage.setItem("accessToken",data.accesToken)
     navigate  (from,{replace:true});
     })
     
