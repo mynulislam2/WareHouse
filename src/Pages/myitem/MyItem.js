@@ -12,10 +12,17 @@ const MyItem = () => {
     const [Myitems, setMyitems] = useState([]);
     const [Restart, setRestart] = useState(false);
     useEffect(() => {
-        const url = `http://localhost:5000/myinventory?email=${user.email}`
-        axios.get(url)
+        
+        const url = `http://localhost:5000/myinventory?email=${user?.email}`
+        console.log(url);
+        axios.get(url,{
+            headers:{
+            authorization:`Bearer ${localStorage?.getItem('accessToken')}`
+            },
+            }
+            )
             .then(res => setMyitems(res.data))
-    }, [Restart]);
+    }, [Restart,user?.email]);
     const itemDelete = (id) => {
         const confirm = window.confirm("are you sure to delete this item?")
         if (confirm) {
