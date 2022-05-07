@@ -7,7 +7,6 @@ import auth from '../../firebase.init';
 
 const AddInventory = () => {
     const [user,loading,error]=useAuthState(auth)
-
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         axios.post("http://localhost:5000/addInventory", {
@@ -19,7 +18,6 @@ const AddInventory = () => {
             Quantity: data.Quantity,
             Supplier: data.Supplier,
             sold: data.sold
-
         })
     };
     return (

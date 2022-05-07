@@ -8,30 +8,31 @@ import SocialMedia from '../SocialMedia/SocialMedia';
 import './Login.css';
 const Login = () => {
     let navigate = useNavigate();
-    let location = useLocation();  
+    let location = useLocation();
     let from = location.state?.from?.pathname || "/";
-   const [user,loading,error]=useAuthState(auth)
+    const [user, loading, error] = useAuthState(auth)
     const [
         signInWithEmailAndPassword,
         SignInUser,
         SignInLoading,
         SignInError,
-      ] = useSignInWithEmailAndPassword(auth);
+    ] = useSignInWithEmailAndPassword(auth);
 
-      if (loading) {
-          return <p>loading...</p>
-      }
-if (SignInUser) {
-    axios.post('http://localhost:5000/login',{email:user.email})
-    .then(result=>{
-    const data=result.data
-    console.log(data);
-    localStorage.setItem("accessToken",data.accesToken)
-    navigate  (from,{replace:true});
-    })
-    
-}
-          
+    if (loading) {
+        return <div style={{ height: "100vh" }} className='d-flex justify-content-center align-items-center'> <Spinner className='me-3' animation="border" variant="danger" />  </div>
+            ;
+    }
+    if (SignInUser) {
+        axios.post('http://localhost:5000/login', { email: user.email })
+            .then(result => {
+                const data = result.data
+                console.log(data);
+                localStorage.setItem("accessToken", data.accesToken)
+                navigate(from, { replace: true });
+            })
+
+    }
+
     const HandleLogin = (event) => {
         event.preventDefault()
         const email = event.target.email.value
@@ -44,13 +45,13 @@ if (SignInUser) {
     return (
         <Container>
             <Row xs={1} sm={1} md={2} lg={3} >
-            
+
 
                 {
-    SignInLoading && <div className='d-flex justify-content-center align-items-center w-100 registrationLoading'><Spinner animation="border" role="status">
-    <span className="visually-hidden">Loading...</span>
-  </Spinner></div> 
-}
+                    SignInLoading && <div className='d-flex justify-content-center align-items-center w-100 registrationLoading'><Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner></div>
+                }
                 <Card className={`mx-auto border-0 shadow rounded-3 my-1 ${SignInLoading && "registration"}`}>
                     <Card.Body className="p-4 p-sm-5">
                         <Card.Title className=" text-center mb-5 fw-light fs-5">Sign In</Card.Title>
