@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import './Login.css';
+import axios from 'axios'
 const Login = () => {
     let navigate = useNavigate();
     let location = useLocation();  
@@ -21,7 +22,14 @@ const Login = () => {
           return <p>loading...</p>
       }
 if (SignInUser) {
-    navigate(from, { replace: true });
+    axios.post('http://localhost:5000/login',{email:user.email})
+    .then(result=>{
+    const data=result.data
+    console.log(data);
+    localStorage.setItem("accessToken",data.accessToken)
+    navigate  (from,{replace:true});
+    })
+    
 }
           
     const HandleLogin = (event) => {

@@ -12,9 +12,7 @@ const Inventory = () => {
     }, [SelectedItem]);
     const ItemReduce = (id) => {
         const ReducedQuantity = Quantity - 1
-        console.log(Quantity, ReducedQuantity);
         const url = `http://localhost:5000/updateQuantity/${id}`
-        console.log(url);
         axios.put(url, {
             Quantity: ReducedQuantity
         })
