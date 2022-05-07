@@ -30,3 +30,53 @@
 .carousel-control-next-icon {
     display: none;
 }
+
+
+@media (max-width: 576px) {
+    .cars img {
+        width: 100%;
+    }
+
+    .caption {
+        position: absolute;
+        bottom: 8rem;
+    }
+
+    .caption h2 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 30px;
+
+    }
+
+    .caption p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+    .cars img {
+        width: 100%;
+    }
+
+
+}
+
+@media (max-width: 992px) {
+    .cars img {
+        width: 100%;
+    }
+
+
+
+}
+
+@media (max-width: 1200px) {
+    .cars img {
+        width: 100%;
+    }
+
+
+}
