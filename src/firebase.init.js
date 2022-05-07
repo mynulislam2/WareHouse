@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAZVaMu6MWrAT7tEryhvMvfh3WGiN8EoDI",
-  authDomain: "carizabd.firebaseapp.com",
-  projectId: "carizabd",
-  storageBucket: "carizabd.appspot.com",
-  messagingSenderId: "428310930155",
-  appId: "1:428310930155:web:962000508df9eaf48854ae"
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId,
 };
 
 const app = initializeApp(firebaseConfig);
