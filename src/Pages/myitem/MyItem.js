@@ -84,7 +84,7 @@ const MyItem = () => {
             <Row>
 
 
-                <BTable {...getTableProps()} striped bordered hover size="sm" >
+                <BTable {...getTableProps()} striped bordered hover responsive size="sm" >
                     <thead>
                         {headerGroups.map(headerGroup => (
                             <tr {...headerGroup.getHeaderGroupProps()}>

@@ -8,7 +8,7 @@ const Fotter = () => {
 const year =new Date().getFullYear()
     return (
         <Container fluid className="fotter">
-            <Row className="w-75 mx-auto">
+            <Row xs={1} lg={3} className=" mx-auto" style={{width:"95%"}}>
                 <Col style={{ marginTop: "80px" }}>
 
                     <h5 className='fotter_heading'>Contact with us</h5>
@@ -35,19 +35,19 @@ const year =new Date().getFullYear()
                 <Col style={{ marginTop: "80px" }}>
                     <h5 className='fotter_heading'>SUBSCRIBE OUR NEWSLETTER</h5>
                     <p className='fotterDescription'>Enter your e-mail and subscribe to our newsletter.</p>
-                    <Form.Control style={{ color: "rgba(171, 168, 168, 0.8)" }} className='bg-dark' placeholder="email@example.com" />
+                    <Form.Control style={{ color: "rgba(171, 168, 168, 0.8)",width:"15rem" }} className='bg-dark' placeholder="email@example.com" />
                     <Button className='mt-3' variant='danger'>subscribe</Button>
 
                 </Col>
             </Row>
-            <Row className="mx-auto mt-3" style={{ width: "95%" }}>
-                <Col className='background'>
-                    <div className='d-flex justify-content-around'>
+            <Row xs={1} lg={2} className="mx-auto mt-3" style={{width:"95%"}} >
+                <Col className='background second_readmoreblog'>
+                    <div className='readmoreBlog'>
                         <div>
                             <h5 className='text-white'>ARE YOU LOOKING FOR A CAR?</h5>
                             <p className='fotterDescription'>Search Our Inventory With Thousands Of Cars And More Cars <br /> Are Adding On Daily Basis</p>
                         </div>'
-                        <div className='d-flex align-items-center'>
+                        <div className='d-flex ms-5 align-items-center'>
                             <Button variant='danger'>
                                 Read More
                             </Button>
@@ -55,13 +55,13 @@ const year =new Date().getFullYear()
                     </div>
 
                 </Col>
-                <Col className='background'>
-                    <div className='d-flex justify-content-around'>
+                <Col className='background '>
+                    <div className='readmoreBlog'>
                         <div>
                             <h5 className='text-white'>DO YOU WANT TO SELL A CAR?</h5>
                             <p className='fotterDescription'>  Search Our Inventory With Thousands Of Cars And More Cars <br /> Are Adding On Daily Basis</p>
                         </div>
-                        <div className='d-flex align-items-center'>
+                        <div className='d-flex ms-5 align-items-center'>
                             <Button variant='danger'>
                                 Read More
                             </Button>

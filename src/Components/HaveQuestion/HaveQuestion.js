@@ -4,7 +4,7 @@ import './HaveQuestion.css'
 const HaveQuestion = () => {
     return (
         <Container fluid className='HaveQuestion'>
-            <Row className='d-flex' xs={1} lg={3} xl={3}>
+            <Row className='d-flex' xs={3} lg={3} xl={3}>
                 <Col>
                     <img className='w-100 haveQuestionCar1 ' src="https://i.ibb.co/Gt2SyCF/car2.webp" />
                 </Col>
