@@ -1,9 +1,10 @@
 import React from 'react';
-import { Card, Container, Form, Row, Spinner } from 'react-bootstrap';
+import { Card, Container, Form, Row } from 'react-bootstrap';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
-import {Link} from 'react-router-dom'
-import { ToastContainer,toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import swal from 'sweetalert';
+
 const ResetPass = () => {
     const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(
         auth
@@ -12,16 +13,14 @@ const ResetPass = () => {
         event.preventDefault()
         const email = event.target.email.value
         sendPasswordResetEmail(email)
-        toast("please check your email")
-    }
+        swal("Please check your email", "");    }
     return (
         <Container>
 
             <Row xs={1} sm={1} md={2} lg={3} >
 
                 {
-                    sending && <div className='d-flex justify-content-center align-items-center w-100 registrationLoading'><Spinner animation="border" role="status">
-                    </Spinner></div>
+                    sending && <div className='d-flex justify-content-center align-items-center w-100 '></div>
                 }
 
                 <Card className={`mx-auto border-0 shadow rounded-3 my-1 ${sending && "registration"}`}>
@@ -44,7 +43,6 @@ const ResetPass = () => {
                     </Card.Body>
                 </Card>
             </Row>
-            <ToastContainer />
 
         </Container>
     );

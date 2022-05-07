@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Card, Container, Form, Row, Spinner } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import swal from 'sweetalert';
 import auth from '../../firebase.init';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import './Registration.css';
@@ -38,8 +37,8 @@ const Registration = () => {
 
     }
     if (!error && user) {
-        toast("please verify your email");
-    }
+        swal("Successfully Registered!", "check your email to verify");
+    } 
     return (
         <Container>
 
@@ -86,7 +85,6 @@ const Registration = () => {
                     </Card.Body>
                 </Card>
             </Row>
-            <ToastContainer />
 
         </Container>
     );
