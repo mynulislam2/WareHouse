@@ -6,6 +6,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import { useTable } from 'react-table/dist/react-table.development';
 import auth from '../../firebase.init';
+import swal from 'sweetalert';
+
 const MyItem = () => {
     const [user, loading, error] = useAuthState(auth)
 
@@ -24,16 +26,21 @@ const MyItem = () => {
             .then(res => setMyitems(res.data))
     }, [Restart,user?.email]);
     const itemDelete = (id) => {
-        const confirm = window.confirm("are you sure to delete this item?")
-        if (confirm) {
-            const url = `http://localhost:5000/deleteInventory/${id}`
-            axios.delete(url)
-                .then(res => {
-                    if (res.data.deletedCount > 0) {
-                        setRestart(!Restart)
-                    }
-                })
-        }
+        swal("Are you sure you want to do this?", {
+            buttons: ["NO", "Yes"],
+        })
+        .then((isOkay)=>{
+            if (isOkay) {
+                const url = `http://localhost:5000/deleteInventory/${id}`
+                axios.delete(url)
+                    .then(res => {
+                        if (res.data.deletedCount > 0) {
+                            setRestart(!Restart)
+                        }
+                    })
+            }
+        })
+
 
     }
 

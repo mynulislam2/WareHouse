@@ -4,6 +4,7 @@ import { Button, Container, Row } from 'react-bootstrap';
 import BTable from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 import { useTable } from 'react-table/dist/react-table.development';
+import swal from 'sweetalert';
 
 const ManageInventories = () => {
     const [ProductsItems, setProductsItems] = useState([]);
@@ -14,16 +15,21 @@ const ManageInventories = () => {
             .then(res => setProductsItems(res.data))
     }, [Restart]);
     const itemDelete = (id) => {
-        const confirm = window.confirm("are you sure to delete this item?")
-        if (confirm) {
-            const url = `http://localhost:5000/deleteInventory/${id}`
-            axios.delete(url)
-                .then(res => {
-                    if (res.data.deletedCount > 0) {
-                        setRestart(!Restart)
-                    }
-                })
-        }
+        swal("Are you sure you want to do this?", {
+            buttons: ["NO", "Yes"],
+        })
+        .then((isOkay)=>{
+            if (isOkay) {
+                const url = `http://localhost:5000/deleteInventory/${id}`
+                axios.delete(url)
+                    .then(res => {
+                        if (res.data.deletedCount > 0) {
+                            setRestart(!Restart)
+                        }
+                    })
+            }
+        })
+
 
     }
 
