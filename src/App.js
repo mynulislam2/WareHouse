@@ -1,3 +1,5 @@
+// import { Circle } from 'react-preloaders';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from './Components/Header/Header';
 import RequireAuth from "./Components/RequireAuth/RequireAuth";
@@ -12,9 +14,16 @@ import MyItem from "./Pages/myitem/MyItem";
 import NotFound from "./Pages/NotFound/NotFound";
 import Registration from "./Pages/Registration/Registration";
 import ResetPass from "./Pages/ResetPass/ResetPass";
+import spinner from './Pages/images/Blocks-1s-200px.gif'
 function App() {
-  return (
-    <div className="App">
+  const [ prelaoder, setPreload ] = useState(true);
+       setTimeout(() => setPreload(false), 3000)
+
+    if (prelaoder) {
+      return <div style={{height:"100vh"}} className='d-flex justify-content-center align-items-center'> <img src={spinner} alt=""  />  </div> 
+}
+
+  return !prelaoder && <div>
       <BrowserRouter>
         <Header></Header>
 
@@ -57,8 +66,8 @@ function App() {
           <Route path="/*" element={<NotFound></NotFound>}> </Route>
         </Routes>
       </BrowserRouter>
-    </div>
-  );
+
+    </div>;
 }
 
 export default App;

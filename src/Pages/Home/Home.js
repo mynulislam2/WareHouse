@@ -7,9 +7,11 @@ import Product from '../../Components/products/Product';
 import ProductSelect from '../../Components/ProductSelect/ProductSelect';
 
 
+
 const Home = () => {
     return (
         <div>
+
  <Banner></Banner>
 <Product></Product>
 <HaveQuestion></HaveQuestion>
