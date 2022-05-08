@@ -24,10 +24,20 @@ function App() {
           <Route path="/about" element={<About></About>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-          <Route path="/myinventory" element={<MyItem></MyItem>}>
+          <Route path="/myinventory" element={
+            <RequireAuth>
+              <MyItem></MyItem>
+            </RequireAuth>
+
+          }>
           </Route>
           <Route path="/resetpass" element={<ResetPass></ResetPass>}></Route>
-          <Route path="/manageinventory" element={<ManageInventories></ManageInventories>}></Route>
+          <Route path="/manageinventory" element={
+            <RequireAuth>
+              <ManageInventories></ManageInventories>
+            </RequireAuth>
+
+          }></Route>
           <Route path="/registration" element=
             {
               <Registration></Registration>
@@ -39,7 +49,11 @@ function App() {
               <Inventory></Inventory>
             </RequireAuth>
           }></Route>
-          <Route path="/addinventory" element={<AddInventory></AddInventory>}></Route>
+          <Route path="/addinventory" element={
+            <RequireAuth>
+              <AddInventory></AddInventory>
+            </RequireAuth>
+          }></Route>
           <Route path="/*" element={<NotFound></NotFound>}> </Route>
         </Routes>
       </BrowserRouter>
