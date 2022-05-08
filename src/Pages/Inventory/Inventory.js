@@ -21,7 +21,6 @@ const Inventory = () => {
         event.preventDefault()
         const AddedQuantity = parseInt(event.target.number.value)
         const url = `https://serene-mesa-54032.herokuapp.com/updateQuantity/${_id}`
-        console.log(url);
         axios.put(url, {
             Quantity: parseInt(Quantity + AddedQuantity)
         })

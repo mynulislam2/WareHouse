@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Container, Form, Row, Spinner } from 'react-bootstrap';
 import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -7,6 +7,8 @@ import auth from '../../firebase.init';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import './Login.css';
 const Login = () => {
+    const [errors, setErrors] = useState('');
+
     let navigate = useNavigate();
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
@@ -26,7 +28,6 @@ const Login = () => {
         axios.post('https://serene-mesa-54032.herokuapp.com/login', { email: user.email })
             .then(result => {
                 const data = result.data
-                console.log(data);
                 localStorage.setItem("accessToken", data.accesToken)
                 navigate(from, { replace: true });
             })
@@ -40,6 +41,11 @@ const Login = () => {
         const checked = event.target.check.checked
         if (checked) {
             signInWithEmailAndPassword(email, password)
+            setErrors("")
+
+        }
+       else if (!checked) {
+            setErrors("Please checkout our terms and condition")
         }
     }
     return (
@@ -71,6 +77,7 @@ const Login = () => {
                                 <Form.Check type="checkbox" label="term and condition" name='check' />
                             </Form.Group>
                             {SignInError && <p className='text-danger'>{SignInError?.message.slice(22)}</p>}
+                            {errors && <p className='text-danger'>{errors}</p>}
                             <div className="d-grid mb-2">
                                 <button className="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign
                                     in</button>

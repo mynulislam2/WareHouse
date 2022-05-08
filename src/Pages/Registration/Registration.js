@@ -22,7 +22,6 @@ const Registration = () => {
         const password = event.target.password.value
         const checked = event.target.check.checked
         const confirmPassword = event.target.confirmPassword.value
-        console.log(email, password, checked, confirmPassword);
         if (checked && password === confirmPassword) {
             createUserWithEmailAndPassword(email, password)
             setErrors('')

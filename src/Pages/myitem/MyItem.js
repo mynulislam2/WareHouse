@@ -16,7 +16,6 @@ const MyItem = () => {
     useEffect(() => {
         
         const url = `https://serene-mesa-54032.herokuapp.com/myinventory?email=${user?.email}`
-        console.log(url);
         axios.get(url,{
             headers:{
             authorization:`Bearer ${localStorage?.getItem('accessToken')}`
