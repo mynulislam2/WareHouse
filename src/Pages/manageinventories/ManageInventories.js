@@ -10,7 +10,7 @@ const ManageInventories = () => {
     const [ProductsItems, setProductsItems] = useState([]);
     const [Restart, setRestart] = useState(false);
     useEffect(() => {
-        const url = "http://localhost:5000/Inventory"
+        const url = "https://serene-mesa-54032.herokuapp.com/Inventory"
         axios.get(url)
             .then(res => setProductsItems(res.data))
     }, [Restart]);
@@ -20,7 +20,7 @@ const ManageInventories = () => {
         })
         .then((isOkay)=>{
             if (isOkay) {
-                const url = `http://localhost:5000/deleteInventory/${id}`
+                const url = `https://serene-mesa-54032.herokuapp.com/deleteInventory/${id}`
                 axios.delete(url)
                     .then(res => {
                         if (res.data.deletedCount > 0) {

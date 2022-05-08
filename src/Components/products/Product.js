@@ -6,7 +6,7 @@ import ProductCard from './ProductCard';
 const Product = () => {
     const [ProductsItems, setProductsItems] = useState([]);
     useEffect(() => {
-        const url = "http://localhost:5000/limitedInventory"
+        const url = "https://serene-mesa-54032.herokuapp.com/limitedInventory"
         axios.get(url)
             .then(res => setProductsItems(res.data))
     }, []);

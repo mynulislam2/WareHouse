@@ -7,12 +7,12 @@ const Inventory = () => {
     const [SelectedItem, setSelectedItem] = useState({});
     const { img, tittle, description, Quantity, Supplier, price, sold } = SelectedItem
     useEffect(() => {
-        axios.get(`http://localhost:5000/inventory/${_id}`)
+        axios.get(`https://serene-mesa-54032.herokuapp.com/inventory/${_id}`)
             .then(res => setSelectedItem(res.data))
     }, [SelectedItem]);
     const ItemReduce = (id) => {
         const ReducedQuantity = Quantity - 1
-        const url = `http://localhost:5000/updateQuantity/${id}`
+        const url = `https://serene-mesa-54032.herokuapp.com/updateQuantity/${id}`
         axios.put(url, {
             Quantity: ReducedQuantity
         })
@@ -20,7 +20,7 @@ const Inventory = () => {
     const AddQuantity = (event) => {
         event.preventDefault()
         const AddedQuantity = parseInt(event.target.number.value)
-        const url = `http://localhost:5000/updateQuantity/${_id}`
+        const url = `https://serene-mesa-54032.herokuapp.com/updateQuantity/${_id}`
         console.log(url);
         axios.put(url, {
             Quantity: parseInt(Quantity + AddedQuantity)

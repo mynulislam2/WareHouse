@@ -9,7 +9,7 @@ const AddInventory = () => {
     const [user,loading,error]=useAuthState(auth)
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        axios.post("http://localhost:5000/addInventory", {
+        axios.post("https://serene-mesa-54032.herokuapp.com/addInventory", {
             email:user.email,
             tittle: data.tittle,
             img: data.img,

@@ -5,8 +5,8 @@ import BTable from 'react-bootstrap/Table';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import { useTable } from 'react-table/dist/react-table.development';
-import auth from '../../firebase.init';
 import swal from 'sweetalert';
+import auth from '../../firebase.init';
 
 const MyItem = () => {
     const [user, loading, error] = useAuthState(auth)
@@ -15,7 +15,7 @@ const MyItem = () => {
     const [Restart, setRestart] = useState(false);
     useEffect(() => {
         
-        const url = `http://localhost:5000/myinventory?email=${user?.email}`
+        const url = `https://serene-mesa-54032.herokuapp.com/myinventory?email=${user?.email}`
         console.log(url);
         axios.get(url,{
             headers:{
@@ -31,7 +31,7 @@ const MyItem = () => {
         })
         .then((isOkay)=>{
             if (isOkay) {
-                const url = `http://localhost:5000/deleteInventory/${id}`
+                const url = `https://serene-mesa-54032.herokuapp.com/deleteInventory/${id}`
                 axios.delete(url)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
